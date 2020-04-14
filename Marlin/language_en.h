@@ -131,7 +131,7 @@
   #define MSG_PREHEAT_1_SETTINGS              MSG_PREHEAT_1 _UxGT(" conf")
 #endif
 #ifndef MSG_PREHEAT_2
-  #define MSG_PREHEAT_2                       _UxGT("Preheat ABS")
+  #define MSG_PREHEAT_2                       _UxGT("Preheat PETG")
 #endif
 #ifndef MSG_PREHEAT_2_N
   #define MSG_PREHEAT_2_N                     MSG_PREHEAT_2 _UxGT(" ")
@@ -251,7 +251,7 @@
   #define MSG_UBL_BUILD_PLA_MESH              _UxGT("Build PLA Mesh")
 #endif
 #ifndef MSG_UBL_BUILD_ABS_MESH
-  #define MSG_UBL_BUILD_ABS_MESH              _UxGT("Build ABS Mesh")
+  #define MSG_UBL_BUILD_ABS_MESH              _UxGT("Build PETG Mesh")
 #endif
 #ifndef MSG_UBL_BUILD_COLD_MESH
   #define MSG_UBL_BUILD_COLD_MESH             _UxGT("Build Cold Mesh")
@@ -269,7 +269,7 @@
   #define MSG_UBL_VALIDATE_PLA_MESH           _UxGT("Validate PLA Mesh")
 #endif
 #ifndef MSG_UBL_VALIDATE_ABS_MESH
-  #define MSG_UBL_VALIDATE_ABS_MESH           _UxGT("Validate ABS Mesh")
+  #define MSG_UBL_VALIDATE_ABS_MESH           _UxGT("Validate PETG Mesh")
 #endif
 #ifndef MSG_UBL_VALIDATE_CUSTOM_MESH
   #define MSG_UBL_VALIDATE_CUSTOM_MESH        _UxGT("Validate Custom Mesh")
