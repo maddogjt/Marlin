@@ -179,7 +179,7 @@ uint16_t max_display_update_time = 0;
   void lcd_control_temperature_menu();
   void lcd_control_motion_menu();
 
-  #if DISABLED(SLIM_LCD_MENUS)
+  #if DISABLED(SLIM_LCD_MENUS) || true // Customized jatra
     void lcd_control_temperature_preheat_material1_settings_menu();
     void lcd_control_temperature_preheat_material2_settings_menu();
   #endif
@@ -3609,7 +3609,7 @@ void lcd_quick_feedback(const bool clear_buttons) {
 
     #endif // PIDTEMP
 
-    #if DISABLED(SLIM_LCD_MENUS)
+    #if DISABLED(SLIM_LCD_MENUS) || true // Customized jatras
       //
       // Preheat Material 1 conf
       //
@@ -3624,7 +3624,7 @@ void lcd_quick_feedback(const bool clear_buttons) {
     END_MENU();
   }
 
-  #if DISABLED(SLIM_LCD_MENUS)
+  #if DISABLED(SLIM_LCD_MENUS) || true // Customized jatra
 
     void _lcd_control_temperature_preheat_settings_menu(const uint8_t material) {
       #if HOTENDS > 4
