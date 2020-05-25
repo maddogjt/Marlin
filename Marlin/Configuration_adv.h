@@ -424,7 +424,7 @@
 // @section lcd
 
 #if ENABLED(ULTIPANEL)
-  #define MANUAL_FEEDRATE {50*60, 50*60, 4*60, 60} // Feedrates for manual moves along X, Y, Z, E from panel Customized DBP according to Ender 3 default firmware settings
+  #define MANUAL_FEEDRATE {50*60, 50*60, 5*60, 2*60} // Feedrates for manual moves along X, Y, Z, E from panel Customized DBP according to Ender 3 default firmware settings
   #define ULTIPANEL_FEEDMULTIPLY  // Comment to disable setting feedrate multiplier via encoder
 #endif
 
@@ -593,7 +593,7 @@
    * an option on the LCD screen to continue the print from the last-known
    * point in the file.
    */
-  #define POWER_LOSS_RECOVERY
+  //#define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
     //#define POWER_LOSS_PIN   44     // Pin to detect power loss
     //#define POWER_LOSS_STATE HIGH   // State of pin indicating power loss
@@ -1492,18 +1492,20 @@
 
   #define USER_DESC_1 "Enable Bed Leveling" //Customized DBP
   #define USER_GCODE_1 "G28\nM420 S1" //Customized DBP
-
-  #define USER_DESC_2 "Maintenance position" //Customized DBP
-  #define USER_GCODE_2 "G90\nG0 X0 Y0 Z50\nM84" //Customized DBP
   
-  #define USER_DESC_3 "Heat and Level PLA" //Customized DBP
-  #define USER_GCODE_3 "M190 R" STRINGIFY(PREHEAT_1_TEMP_BED) "\nG4 S60\nG28\nG29\nM500\nG28\nM140 S0" //Customized DBP
+  #define USER_DESC_2 "Emergency Stop" //Customized DBP
+  #define USER_GCODE_2 "M112" //Customized DBP
 
-  #define USER_DESC_4 "Heat and Level PET" //Customized DBP
-  #define USER_GCODE_4 "M190 R" STRINGIFY(PREHEAT_2_TEMP_BED) "\nG4 S60\nG28\nG29\nM500\nG28\nM140 S0" //Customized DBP
+  #define USER_DESC_3 "Maintenance position" //Customized DBP
+  #define USER_GCODE_3 "G27\nM84" //Customized DBP
+  
+  #define USER_DESC_4 "Heat and Level PLA" //Customized DBP
+  #define USER_GCODE_4 "M190 R" STRINGIFY(PREHEAT_1_TEMP_BED) "\nG4 S60\nG28\nG29\nM500\nG28\nM140 S0" //Customized DBP
 
-  #define USER_DESC_5 "Emergency Stop" //Customized DBP
-  #define USER_GCODE_5 "M112" //Customized DBP
+  #define USER_DESC_5 "Disable Bed Leveling" //Customized jatra
+  #define USER_GCODE_5 "M420 S0" //Customized jatra
+
+
 #endif
 
 /**

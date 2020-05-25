@@ -39,6 +39,8 @@
 #define CONFIGURATION_H
 #define CONFIGURATION_H_VERSION 010109
 
+#define USE_AUTOMATIC_VERSIONING
+
 //===========================================================================
 //============================= Getting Started =============================
 //===========================================================================
@@ -782,8 +784,8 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER -42  // X offset: -left  +right  [of the nozzle] Customized DBP
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -5  // Y offset: -front +behind [the nozzle] Customized DBP
+#define X_PROBE_OFFSET_FROM_EXTRUDER -45  // X offset: -left  +right  [of the nozzle] Customized DBP
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -7  // Y offset: -front +behind [the nozzle] Customized DBP
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle] Customized DBP
 
 // Certain types of probes need to stay away from edges
@@ -822,7 +824,7 @@
 #define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
-#define Z_AFTER_PROBING           20 // Z position after probing is done Customized DBP
+#define Z_AFTER_PROBING           10 // Z position after probing is done Customized DBP
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
@@ -875,7 +877,8 @@
 
 //#define UNKNOWN_Z_NO_RAISE // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
 
-#define Z_HOMING_HEIGHT 20  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
+// Customized jatra - without this, default would be Z_CLEARANCE_BETWEEN_PROBES which is 5
+#define Z_HOMING_HEIGHT 10  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
                              // Be sure you have this distance over your Z_MAX_POS in case. Customized DBP
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
@@ -1111,12 +1114,12 @@
 #define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
-  #define MBL_Z_STEP 0.04    // Step size while manually probing Z axis.
+  #define MBL_Z_STEP 0.025    // Step size while manually probing Z axis.
   #define LCD_PROBE_Z_RANGE 4 // Z Range centered on Z_MIN_POS for LCD Z adjustment
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-//#define LEVEL_BED_CORNERS
+#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET 30    // (mm) An inset for corner leveling
@@ -1159,7 +1162,7 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (20*60)
+#define HOMING_FEEDRATE_XY (30*60)
 #define HOMING_FEEDRATE_Z  (4*60)
 
 // @section calibrate
@@ -1265,7 +1268,7 @@
 // @section temperature
 
 // Preheat Constants
-#define PREHEAT_1_TEMP_HOTEND 200  // Customized jatra
+#define PREHEAT_1_TEMP_HOTEND 210  // Customized jatra
 #define PREHEAT_1_TEMP_BED    60   // Customized jatra
 #define PREHEAT_1_FAN_SPEED   0 // Value from 0 to 255 Customized DBP according to the original Ender 3 firmware
 
