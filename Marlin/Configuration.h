@@ -39,8 +39,6 @@
 #define CONFIGURATION_H
 #define CONFIGURATION_H_VERSION 010109
 
-#define USE_AUTOMATIC_VERSIONING
-
 //===========================================================================
 //============================= Getting Started =============================
 //===========================================================================
@@ -83,7 +81,7 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(Daniel BP, Ender-3)" // Who made the changes. Customized DBP
+#define STRING_CONFIG_H_AUTHOR "(jatra, Ender-3)" // Who made the changes. Customized DBP
 //#define SHOW_BOOTSCREEN //Customized DBP
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
@@ -784,8 +782,8 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER -45  // X offset: -left  +right  [of the nozzle] Customized DBP
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -7  // Y offset: -front +behind [the nozzle] Customized DBP
+#define X_PROBE_OFFSET_FROM_EXTRUDER -45  // X offset: -left  +right  [of the nozzle] Customized jatra
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -7  // Y offset: -front +behind [the nozzle] Customized jatra
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle] Customized DBP
 
 // Certain types of probes need to stay away from edges
@@ -805,7 +803,7 @@
 // The number of probes to perform at each point.
 //   Set to 2 for a fast/slow probe, using the second probe result.
 //   Set to 3 or more for slow probes, averaging the results.
-#define MULTIPLE_PROBING 2 //Customized DBP
+//#define MULTIPLE_PROBING 2 //Customized DBP
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -1031,7 +1029,7 @@
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 4
   //#define GRID_MAX_POINTS_X 5 //Customized DBP
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -1048,7 +1046,7 @@
 
     // Beyond the probed grid, continue the implied tilt?
     // Default is to maintain the height of the nearest edge.
-    //#define EXTRAPOLATE_BEYOND_GRID
+    #define EXTRAPOLATE_BEYOND_GRID
 
     //
     // Experimental Subdivision of the grid by Catmull-Rom method.
@@ -1162,7 +1160,7 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (30*60)
+#define HOMING_FEEDRATE_XY (30*60)  // Customized jatra
 #define HOMING_FEEDRATE_Z  (4*60)
 
 // @section calibrate

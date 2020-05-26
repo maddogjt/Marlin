@@ -25,10 +25,21 @@
  * overriden by the ones defined on _Version.h by using the Configuration.h
  * directive USE_AUTOMATIC_VERSIONING.
  */
+#define USE_AUTOMATIC_VERSIONING
 
 #if ENABLED(USE_AUTOMATIC_VERSIONING)
 
   #include "_Version.h"
+
+/**
+   * Required minimum Configuration.h and Configuration_adv.h file versions.
+   *
+   * You must increment this version number for every significant change such as,
+   * but not limited to: ADD, DELETE RENAME OR REPURPOSE any directive/option on
+   * the configuration files.
+   */
+#define REQUIRED_CONFIGURATION_H_VERSION 010109
+#define REQUIRED_CONFIGURATION_ADV_H_VERSION 010109
 
 #else
 
